@@ -27,7 +27,18 @@ subprojects {
   group = "com.netflix.spinnaker.kork"
 
   repositories {
-    jcenter()
+    maven {
+        url = "https://maven.aliyun.com/repository/public"
+        mavenContent { releasesOnly() }
+    }
+    maven {
+        url = "https://pixel.sankuai.com/repository/group-releases"
+        mavenContent { releasesOnly() }
+    }
+    maven {
+        url = "https://pixel.sankuai.com/repository/group-snapshots"
+        mavenContent { snapshotsOnly() }
+    }
   }
 
   if (it.name != "kork-bom" && it.name != "spinnaker-dependencies") {

@@ -14,6 +14,23 @@
  * limitations under the License.
  */
 
+pluginManagement {
+  repositories {
+    maven {
+      url = "https://maven.aliyun.com/repository/gradle-plugin"
+      mavenContent { releasesOnly() }
+    }
+    maven {
+      url = "https://pixel.sankuai.com/repository/group-releases"
+      mavenContent { releasesOnly() }
+    }
+    maven {
+      url = "https://pixel.sankuai.com/repository/group-snapshots"
+      mavenContent { snapshotsOnly() }
+    }
+  }
+}
+
 if (spinnakerGradleVersion.endsWith('-SNAPSHOT')) {
   pluginManagement {
     repositories {
